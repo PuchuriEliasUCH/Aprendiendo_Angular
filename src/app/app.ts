@@ -5,8 +5,17 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
-  protected title = 'angular_app_02';
+  // Atributos de la plantilla
+  protected title: string = 'Hola mundoooo!';
+
+  public users: string[] = ['Daniel', 'Fernanda', 'Alejandro'];
+  // public users?: string[];
+
+  visible: boolean = false;
+
+  isVisible(): void {
+    this.visible = !this.visible;
+  }
 }
