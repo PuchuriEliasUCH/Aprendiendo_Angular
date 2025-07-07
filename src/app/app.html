@@ -1,8 +1,6 @@
 <!-- Envio de propiedades hijo -> padre -->
 
-<h2>Total contado: {{reconta}}</h2>
-
-<app-counter [subtitle]="subtitle" (contadorEmmit)="recibir($event)"></app-counter> 
+<app-counter [subtitle]="subtitle"  (eventoHijo)="manejoEventoHijo()"></app-counter> 
 
 <!--Envio de propiedades padre -> hijo ... [] -->
 <!--Envio de propiedades padre -> hijo ... () -->

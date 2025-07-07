@@ -9,27 +9,14 @@ import { Counter } from "./counter/counter";
   templateUrl: './app.html',
 })
 export class App {
-  // Atributos de la plantilla
-  protected title: string = 'Hola mundoooo!';
   
-
   // Envio de propiedades 
   // Padre -> Hijo (@input)
-  subtitle: string = "Contador con estados locales"
+  subtitle: string = "Otro ejemplo de @Output"
 
   // Envio de propiedades
   // Hijo -> Padre (@output)
-  reconta:number = 0;
-  recibir(e:number): void{
-    this.reconta = e;
-  }
-
-  public users: string[] = ['Daniel', 'Fernanda', 'Alejandro'];
-  // public users?: string[];
-
-  visible: boolean = false;
-
-  isVisible(): void {
-    this.visible = !this.visible;
+  manejoEventoHijo(): void{
+    alert("Oñoooooooo")
   }
 }
