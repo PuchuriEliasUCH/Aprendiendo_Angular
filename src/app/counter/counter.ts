@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
   imports: [],
-  templateUrl: './counter.html'
+  templateUrl: './counter.html',
 })
 export class Counter implements OnInit {
   // Ciclo de vida
@@ -14,15 +14,20 @@ export class Counter implements OnInit {
 
   counter: number = 0;
 
-  setCounter(): void {
-    this.counter++;
-
-    localStorage.setItem('contador', this.counter + '')
-  }
-
-
-  // Envio de propiedades 
+  // Envio de propiedades
   // Padre -> Hijo (@input)
   @Input() subtitle!: string;
 
+  // Envio de propiedades
+  // Padre -> Hijo (@input)
+  @Output() contadorEmmit: EventEmitter<number> = new EventEmitter();
+
+  setCounter(): void {
+    this.counter++;
+
+    localStorage.setItem('contador', this.counter + '');
+    
+    // Enviando datos al componente padre
+    this.contadorEmmit.emit(this.counter);
+  }
 }

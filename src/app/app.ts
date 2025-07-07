@@ -17,6 +17,13 @@ export class App {
   // Padre -> Hijo (@input)
   subtitle: string = "Contador con estados locales"
 
+  // Envio de propiedades
+  // Hijo -> Padre (@output)
+  reconta:number = 0;
+  recibir(e:number): void{
+    this.reconta = e;
+  }
+
   public users: string[] = ['Daniel', 'Fernanda', 'Alejandro'];
   // public users?: string[];
 
